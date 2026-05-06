@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Invitation</title>
+  <meta name="description" content="You are cordially invited to our wedding celebration">
+  <meta name="author" content="Wedding Invitation">
+  <meta name="keywords" content="wedding, invitation, celebration">
+
+  <meta property="og:title" content="Wedding Invitation">
+  <meta property="og:description" content="You are cordially invited to our wedding celebration">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Wedding Invitation">
+  <meta name="twitter:description" content="You are cordially invited to our wedding celebration">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+
+  <div class="loading">
+    <div class="loading-spinner"></div>
+  </div>
+
+  <section class="hero">
+    <div class="hero-bg" data-hero-bg></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-frame">
+      <div class="hero-corner hero-corner--tl"></div>
+      <div class="hero-corner hero-corner--tr"></div>
+      <div class="hero-corner hero-corner--bl"></div>
+      <div class="hero-corner hero-corner--br"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-kolam">
+        <svg viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="2" fill="currentColor" opacity="0.6"/>
+          <circle cx="30" cy="12" r="2.5" fill="currentColor"/>
+          <circle cx="48" cy="12" r="2" fill="currentColor" opacity="0.6"/>
+          <line x1="16" y1="12" x2="26" y2="12" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
+          <line x1="34" y1="12" x2="44" y2="12" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
+          <path d="M8 8 L12 12 L8 16" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+          <path d="M52 8 L48 12 L52 16" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+        </svg>
+      </div>
+      <p class="hero-subtitle">We invite you to celebrate with us</p>
+      <h1 class="hero-names">
+        <span data-name="groom"></span>
+        <span class="amp">&amp;</span>
+        <span data-name="bride"></span>
+      </h1>
+      <div class="hero-divider"></div>
+      <p class="hero-date" data-wedding-date></p>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="section welcome-section">
+    <div class="section-header">
+      <h2 class="section-title">Together with their families</h2>
+      <div class="section-divider">
+        <span class="line"></span>
+        <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8 Z" opacity="0.7"/>
+        </svg>
+        <span class="line"></span>
+      </div>
+    </div>
+    <p class="welcome-text">
+      With joyful hearts, we invite you to share in our happiness as
+      <span class="names-highlight" data-name="couple"></span>
+      unite in marriage and begin their journey together.
+    </p>
+  </section>
+
+  <section class="countdown-section">
+    <div class="section-header">
+      <h2 class="section-title">Counting Down</h2>
+      <div class="section-divider">
+        <span class="line"></span>
+        <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8 Z" opacity="0.7"/>
+        </svg>
+        <span class="line"></span>
+      </div>
+    </div>
+    <div class="countdown-grid">
+      <div class="countdown-item">
+        <div class="countdown-number" data-countdown="days">00</div>
+        <div class="countdown-label">Days</div>
+      </div>
+      <div class="countdown-item">
+        <div class="countdown-number" data-countdown="hours">00</div>
+        <div class="countdown-label">Hours</div>
+      </div>
+      <div class="countdown-item">
+        <div class="countdown-number" data-countdown="minutes">00</div>
+        <div class="countdown-label">Minutes</div>
+      </div>
+      <div class="countdown-item">
+        <div class="countdown-number" data-countdown="seconds">00</div>
+        <div class="countdown-label">Seconds</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section events-section">
+    <div class="section-header">
+      <h2 class="section-title">Events</h2>
+      <div class="section-divider">
+        <span class="line"></span>
+        <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8 Z" opacity="0.7"/>
+        </svg>
+        <span class="line"></span>
+      </div>
+    </div>
+    <div data-events></div>
+    <div data-calendar-buttons></div>
+  </section>
+
+  <section class="section venue-section">
+    <div class="section-header">
+      <h2 class="section-title">Venue</h2>
+      <div class="section-divider">
+        <span class="line"></span>
+        <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8 Z" opacity="0.7"/>
+        </svg>
+        <span class="line"></span>
+      </div>
+    </div>
+    <h3 class="venue-name" data-venue="name"></h3>
+    <p class="venue-address" data-venue="address"></p>
+    <div class="map-container" data-map></div>
+    <a href="#" class="directions-btn" data-directions target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24">
+        <path d="M3 11l19-9-9 19-2-8-8-2z"/>
+      </svg>
+      Get Directions
+    </a>
+  </section>
+
+  <section class="gallery-section">
+    <div class="section-header">
+      <h2 class="section-title">Our Moments</h2>
+      <div class="section-divider">
+        <span class="line"></span>
+        <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8 Z" opacity="0.7"/>
+        </svg>
+        <span class="line"></span>
+      </div>
+    </div>
+    <div class="gallery-grid" data-gallery></div>
+  </section>
+
+  <section class="whatsapp-section">
+    <div class="section-header">
+      <h2 class="section-title">Send Your Wishes</h2>
+      <div class="section-divider">
+        <span class="line"></span>
+        <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8 Z" opacity="0.7"/>
+        </svg>
+        <span class="line"></span>
+      </div>
+    </div>
+    <p class="whatsapp-text">Share your blessings and congratulations</p>
+    <a href="#" class="whatsapp-btn" data-whatsapp target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Send a Message
+    </a>
+  </section>
+
+  <footer class="footer">
+    <p class="footer-names" data-footer="names"></p>
+    <p class="footer-date" data-footer="date"></p>
+  </footer>
+
+  <button class="music-btn" data-music-btn aria-label="Toggle music">
+    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+  </button>
+
+  <script src="patches.js"></script>
+</body>
+</html>

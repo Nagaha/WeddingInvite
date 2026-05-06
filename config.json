@@ -1,0 +1,60 @@
+{
+  "couple": {
+    "groomName": "Surutheswar ",
+    "brideName": "Yuvarani"
+  },
+  "venue": {
+    "enabled": true,
+    "name": "Vasavi Mahal, Kumbakonam",
+    "address": "Vasavi Mahal, Kumbakonam",
+    "googleMapsLink": "https://maps.app.goo.gl/6EHqJYKLrFWof13o9",
+    "showMap": true,
+    "showDirections": true
+  },
+  "whatsapp": {
+    "enabled": true,
+    "number": "+919940000000",
+    "messageTemplate": "Hi {groom} & {bride}! Congratulations on your wedding! We're so happy to celebrate this special day with you."
+  },
+  "music": {
+    "enabled": true,
+    "defaultTrack": "track1",
+    "tracks": {
+      "track1": { "name": "Beautiful Dream", "file": "track1.mp3" },
+      "track2": { "name": "Track 1", "file": "1.mp3" }
+    }
+  },
+  "photos": {
+    "enabled": false,
+    "hero": {
+      "desktop": "/gallery-optimized/image.png",
+      "mobile": "/gallery-optimized/image.png"
+    },
+    "gallery": [
+      "/gallery-optimized/01-copy-of-0c0a9886-1200.jpg",
+      "/gallery-optimized/02-copy-of-0c0a9888-1200.jpg",
+      "/gallery-optimized/03-copy-of-0c0a9894-1200.jpg",
+      "/gallery-optimized/04-copy-of-9a4a5651-1200.jpg",
+      "/gallery-optimized/06-img-5755-1200.jpg",
+      "/gallery-optimized/07-img-5795-1200.jpg",
+      "/gallery-optimized/08-img-6033-1200.jpg",
+      "/gallery-optimized/09-img-5722-1200.jpg",
+      "/gallery-optimized/10-img-5531-1200.jpg"
+    ]
+  },
+  "events": [
+    {
+      "title": "Wedding Ceremony",
+      "date": "27 May 2026 (9:00 AM to 10:30 AM)",
+      "icon": "mandala"
+    }
+  ],
+  "wedding": {
+    "date": "2026-05-27",
+    "time": "09:00",
+    "displayText": "27 May 2026 (9:00 AM to 10:30 AM)",
+    "calendarTitle": "Surutheswar & Yuvarani Wedding",
+    "calendarLocation": "Vasavi Mahal, Kumbakonam",
+    "showCalendarButtons": false  
+  }
+}

@@ -1,0 +1,864 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+:root {
+  --maroon-deep: #3d0c11;
+  --maroon: #5c1a21;
+  --temple-red: #8b2e3b;
+  --gold-antique: #c9a96e;
+  --gold: #d4b87a;
+  --gold-bright: #e2c992;
+  --copper: #b87333;
+  --copper-light: #d4956a;
+  --ivory: #faf5eb;
+  --ivory-warm: #f5ede0;
+  --sandstone: #e8dcc8;
+  --sandstone-dark: #d4c5a9;
+  --bronze: #8c7355;
+  --bronze-dark: #6b5740;
+  --saffron-muted: #d4a56a;
+  --text-primary: #2a1f14;
+  --text-secondary: #5a4a3a;
+  --text-light: #faf5eb;
+  --bg-primary: #faf5eb;
+  --bg-warm: #f5ede0;
+  --bg-dark: #1a0f0a;
+  --bg-section: #f0e6d5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Cormorant Garamond', serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ========== SILK TEXTURE OVERLAY ========== */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.015;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(139, 46, 59, 0.1) 2px,
+    rgba(139, 46, 59, 0.1) 4px
+  );
+}
+
+/* ========== LOADING ========== */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: var(--maroon-deep);
+  position: relative;
+}
+
+.loading-spinner {
+  width: 48px;
+  height: 48px;
+  position: relative;
+}
+
+.loading-spinner::before,
+.loading-spinner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid transparent;
+}
+
+.loading-spinner::before {
+  border-top-color: var(--gold);
+  animation: spin 1.2s linear infinite;
+}
+
+.loading-spinner::after {
+  border-bottom-color: var(--copper);
+  animation: spin 1.2s linear infinite reverse 0.3s;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--maroon-deep);
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  filter: brightness(0.7) saturate(0.9);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(61, 12, 17, 0.5) 0%,
+    rgba(61, 12, 17, 0.65) 40%,
+    rgba(61, 12, 17, 0.85) 100%
+  );
+  z-index: 1;
+}
+
+.hero-frame {
+  position: absolute;
+  inset: 2rem;
+  border: 1px solid rgba(201, 169, 110, 0.25);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0.5rem;
+  border: 1px solid rgba(201, 169, 110, 0.15);
+}
+
+.hero-corner {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  z-index: 3;
+}
+
+.hero-corner::before,
+.hero-corner::after {
+  content: '';
+  position: absolute;
+  background: var(--gold);
+  opacity: 0.6;
+}
+
+.hero-corner::before {
+  width: 1px;
+  height: 100%;
+  left: 0;
+}
+
+.hero-corner::after {
+  width: 100%;
+  height: 1px;
+  top: 0;
+}
+
+.hero-corner--tl { top: 1.75rem; left: 1.75rem; }
+.hero-corner--tr { top: 1.75rem; right: 1.75rem; transform: scaleX(-1); }
+.hero-corner--bl { bottom: 1.75rem; left: 1.75rem; transform: scaleY(-1); }
+.hero-corner--br { bottom: 1.75rem; right: 1.75rem; transform: scale(-1, -1); }
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem;
+  max-width: 800px;
+}
+
+.hero-kolam {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  opacity: 0.7;
+}
+
+.hero-kolam svg {
+  width: 60px;
+  height: 24px;
+}
+
+.hero-subtitle {
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold-antique);
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.hero-names {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 300;
+  color: var(--ivory);
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+
+.hero-names .amp {
+  display: block;
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold);
+  font-size: 0.5em;
+  margin: 0.3em 0;
+  letter-spacing: 0.1em;
+}
+
+.hero-divider {
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-antique), transparent);
+  margin: 2rem auto;
+  position: relative;
+}
+
+.hero-divider::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 7px;
+  height: 7px;
+  background: var(--gold);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.hero-date {
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  letter-spacing: 0.25em;
+  color: var(--sandstone);
+  font-weight: 400;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.scroll-indicator span {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-antique);
+  opacity: 0.5;
+}
+
+.scroll-indicator svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--gold-antique);
+  opacity: 0.4;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ========== SECTIONS ========== */
+.section {
+  padding: 6rem 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 400;
+  color: var(--maroon);
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.section-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0 auto;
+}
+
+.section-divider .line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-antique));
+}
+
+.section-divider .line:last-child {
+  background: linear-gradient(to left, transparent, var(--gold-antique));
+}
+
+.section-divider .motif {
+  color: var(--copper);
+  opacity: 0.6;
+  font-size: 0.8rem;
+}
+
+.section-divider svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--copper);
+  opacity: 0.5;
+}
+
+/* ========== WELCOME ========== */
+.welcome-section {
+  background: var(--bg-primary);
+  text-align: center;
+}
+
+.welcome-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+  line-height: 2;
+  color: var(--text-secondary);
+  max-width: 620px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+.welcome-text .names-highlight {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25em;
+  color: var(--maroon);
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* ========== COUNTDOWN ========== */
+.countdown-section {
+  background: var(--maroon-deep);
+  padding: 5rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.countdown-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 120px,
+    rgba(201, 169, 110, 0.03) 120px,
+    rgba(201, 169, 110, 0.03) 121px
+  );
+}
+
+.countdown-section .section-title {
+  color: var(--gold-antique);
+  position: relative;
+}
+
+.countdown-section .section-divider .line {
+  background: linear-gradient(to right, transparent, rgba(201, 169, 110, 0.4));
+}
+
+.countdown-section .section-divider .line:last-child {
+  background: linear-gradient(to left, transparent, rgba(201, 169, 110, 0.4));
+}
+
+.countdown-grid {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.countdown-item {
+  text-align: center;
+  min-width: 80px;
+  padding: 1.5rem 1rem;
+  position: relative;
+}
+
+.countdown-item::after {
+  content: '';
+  position: absolute;
+  right: -1.5rem;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--gold-antique), transparent);
+  opacity: 0.3;
+}
+
+.countdown-item:last-child::after {
+  display: none;
+}
+
+.countdown-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  color: var(--gold-bright);
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.countdown-label {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--sandstone);
+  margin-top: 0.75rem;
+  opacity: 0.7;
+}
+
+/* ========== EVENTS ========== */
+.events-section {
+  background: var(--bg-warm);
+}
+
+.event-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--sandstone-dark);
+  padding: 2.5rem 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.event-card:hover {
+  border-color: var(--gold-antique);
+  box-shadow: 0 8px 30px rgba(92, 26, 33, 0.08);
+  transform: translateY(-2px);
+}
+
+.event-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--copper), transparent);
+}
+
+.event-icon {
+  margin-bottom: 1rem;
+  opacity: 0.6;
+}
+
+.event-icon svg {
+  width: 28px;
+  height: 28px;
+  fill: var(--copper);
+}
+
+.event-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--maroon);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.03em;
+}
+
+.event-date {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+/* ========== CALENDAR BUTTONS ========== */
+.calendar-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.calendar-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.8rem;
+  font-family: 'EB Garamond', serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--gold-antique);
+  color: var(--maroon);
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.calendar-btn:hover {
+  background: var(--maroon);
+  border-color: var(--maroon);
+  color: var(--gold-bright);
+}
+
+.calendar-btn svg {
+  width: 15px;
+  height: 15px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.5;
+}
+
+/* ========== VENUE ========== */
+.venue-section {
+  background: var(--bg-primary);
+  text-align: center;
+}
+
+.venue-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+  font-weight: 500;
+  color: var(--maroon);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.03em;
+}
+
+.venue-address {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  font-style: italic;
+}
+
+.map-container {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border: 1px solid var(--sandstone-dark);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.map-container::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(184, 115, 51, 0.15);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  filter: saturate(0.8) contrast(1.05);
+}
+
+.directions-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2.2rem;
+  font-family: 'EB Garamond', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: linear-gradient(135deg, var(--copper), var(--bronze));
+  color: var(--ivory);
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.directions-btn:hover {
+  background: linear-gradient(135deg, var(--bronze), var(--maroon));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 46, 59, 0.15);
+}
+
+.directions-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.5;
+}
+
+/* ========== GALLERY ========== */
+.gallery-section {
+  background: var(--bg-warm);
+  padding: 6rem 1.5rem;
+}
+
+.gallery-section .section-header {
+  max-width: 960px;
+  margin: 0 auto 3rem;
+}
+
+.gallery-grid {
+  column-count: 3;
+  column-gap: 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 1rem;
+  transition: all 0.5s ease;
+  filter: saturate(0.9) brightness(1.02);
+}
+
+.gallery-grid img:hover {
+  filter: saturate(1) brightness(1);
+  box-shadow: 0 12px 35px rgba(42, 31, 20, 0.15);
+}
+
+@media (max-width: 900px) {
+  .gallery-grid { column-count: 2; }
+}
+
+@media (max-width: 540px) {
+  .gallery-grid { column-count: 1; max-width: 400px; }
+}
+
+/* ========== WHATSAPP ========== */
+.whatsapp-section {
+  background: var(--maroon-deep);
+  text-align: center;
+  padding: 5rem 2rem;
+  position: relative;
+}
+
+.whatsapp-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(201, 169, 110, 0.05) 0%, transparent 70%);
+}
+
+.whatsapp-section .section-title {
+  color: var(--gold-antique);
+  position: relative;
+}
+
+.whatsapp-section .section-divider .line {
+  background: linear-gradient(to right, transparent, rgba(201, 169, 110, 0.4));
+}
+
+.whatsapp-section .section-divider .line:last-child {
+  background: linear-gradient(to left, transparent, rgba(201, 169, 110, 0.4));
+}
+
+.whatsapp-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  color: var(--sandstone);
+  margin-bottom: 2rem;
+  font-style: italic;
+  position: relative;
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1rem 2.5rem;
+  font-family: 'EB Garamond', serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: transparent;
+  color: var(--gold-bright);
+  border: 1px solid var(--gold-antique);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.whatsapp-btn:hover {
+  background: var(--gold-antique);
+  color: var(--maroon-deep);
+}
+
+.whatsapp-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* ========== MUSIC BUTTON ========== */
+.music-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--gold-antique);
+  background: var(--maroon-deep);
+  color: var(--gold);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(26, 15, 10, 0.3);
+}
+
+.music-btn:hover {
+  background: var(--gold-antique);
+  color: var(--maroon-deep);
+  transform: scale(1.05);
+}
+
+.music-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.music-btn.playing {
+  animation: pulse-gold 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 169, 110, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(201, 169, 110, 0); }
+}
+
+/* ========== FOOTER ========== */
+.footer {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--bg-primary);
+  border-top: 1px solid var(--sandstone-dark);
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--copper), transparent);
+}
+
+.footer-names {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--maroon);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.footer-date {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  letter-spacing: 0.1em;
+}
+
+/* ========== SCROLL ANIMATIONS ========== */
+.section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-content {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroFadeIn 1.2s ease forwards 0.3s;
+}
+
+@keyframes heroFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .hero-frame { inset: 1rem; }
+  .hero-corner--tl, .hero-corner--tr, .hero-corner--bl, .hero-corner--br {
+    top: 0.75rem;
+    bottom: auto;
+    left: 0.75rem;
+    right: auto;
+    transform: none;
+  }
+  .hero-corner--tr { right: 0.75rem; left: auto; transform: scaleX(-1); }
+  .hero-corner--bl { bottom: 0.75rem; top: auto; transform: scaleY(-1); }
+  .hero-corner--br { bottom: 0.75rem; top: auto; right: 0.75rem; transform: scale(-1, -1); }
+  
+  .section { padding: 4rem 1.5rem; }
+  .countdown-item::after { display: none; }
+  .map-container { height: 300px; }
+  .music-btn { bottom: 1.5rem; right: 1.5rem; width: 44px; height: 44px; }
+}
+
+@media (max-width: 480px) {
+  .hero { min-height: 600px; }
+  .hero-names { font-size: clamp(2.2rem, 10vw, 3rem); }
+  .calendar-buttons { flex-direction: column; align-items: center; }
+  .calendar-btn { width: 100%; max-width: 250px; justify-content: center; }
+}
