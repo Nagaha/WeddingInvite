@@ -226,28 +226,38 @@
 
     let isPlaying = false;
 
+    const playMusic = () => {
+      audio.volume = 0.009;
+      audio.play().catch(() => { });
+    };
+
     btn.addEventListener('click', () => {
       if (isPlaying) {
         audio.pause();
         btn.classList.remove('playing');
-        btn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>`;
+        btn.innerHTML = `<svg viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z"/>
+        </svg>`;
       } else {
-        audio.play().catch(() => {});
+        playMusic();
         btn.classList.add('playing');
-        btn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>`;
+        btn.innerHTML = `<svg viewBox="0 0 24 24">
+            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+        </svg>`;
       }
+
       isPlaying = !isPlaying;
     });
 
-    document.addEventListener('click', function autoPlay() {
-      if (!isPlaying) {
-        audio.play().catch(() => {});
-        isPlaying = true;
-        btn.classList.add('playing');
-        btn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>`;
-      }
-      document.removeEventListener('click', autoPlay);
-    }, { once: true });
+    // document.addEventListener('click', function autoPlay() {
+    //   if (!isPlaying) {
+    //     audio.play().catch(() => {});
+    //     isPlaying = true;
+    //     btn.classList.add('playing');
+    //     btn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>`;
+    //   }
+    //   document.removeEventListener('click', autoPlay);
+    // }, { once: true });
   }
 
   function updateFooter() {

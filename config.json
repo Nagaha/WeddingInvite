@@ -1,6 +1,6 @@
 {
   "couple": {
-    "groomName": "Naveen Kumar",
+    "groomName": "Naveen kumar",
     "brideName": "Sindhu"
   },
   "venue": {
@@ -20,7 +20,7 @@
     "enabled": true,
     "defaultTrack": "track1",
     "tracks": {
-      "track1": { "name": "Beautiful Dream", "file": "avalum_naanum_violin.mp3" },
+      "track1": { "name": "Beautiful Dream", "file": "avalum_naanum_arrah.mp3" },
       "track2": { "name": "Track 1", "file": "1.mp3" }
     }
   },
@@ -28,7 +28,7 @@
     "enabled": false,
     "hero": {
       "desktop": "/gallery-optimized/image1.png",
-      "mobile": "/gallery-optimized/image1.png"
+      "mobile": "/gallery-optimized/image.png"
     },
     "gallery": [
       
@@ -50,7 +50,7 @@
     "date": "2026-09-07",
     "time": "06:30",
     "displayText": "07 September 2026 (6.00 AM to 7.30 AM)",
-    "calendarTitle": "Naveen Kumar & Sindhu Wedding",
+    "calendarTitle": "Naveen & Sindhu Wedding",
     "calendarLocation": "Sam Mahal, Ambattur, Chennai",
     "showCalendarButtons": false  
   }
