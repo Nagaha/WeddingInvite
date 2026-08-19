@@ -1,13 +1,13 @@
 {
   "couple": {
-    "groomName": "Surutheswar ",
-    "brideName": "Yuvarani"
+    "groomName": "Naveen Kumar",
+    "brideName": "Sindhu"
   },
   "venue": {
     "enabled": true,
-    "name": "Vasavi Mahal, Kumbakonam",
-    "address": "Vasavi Mahal, Kumbakonam",
-    "googleMapsLink": "https://maps.app.goo.gl/6EHqJYKLrFWof13o9",
+    "name": "Sam Mahal",
+    "address": "KSR Nagar, Ambattur, Chennai",
+    "googleMapsLink": "https://maps.app.goo.gl/sPL2dstDka1bbTSA6",
     "showMap": true,
     "showDirections": true
   },
@@ -20,7 +20,7 @@
     "enabled": true,
     "defaultTrack": "track1",
     "tracks": {
-      "track1": { "name": "Beautiful Dream", "file": "track1.mp3" },
+      "track1": { "name": "Beautiful Dream", "file": "avalum_naanum_violin.mp3" },
       "track2": { "name": "Track 1", "file": "1.mp3" }
     }
   },
@@ -31,30 +31,27 @@
       "mobile": "/gallery-optimized/image.png"
     },
     "gallery": [
-      "/gallery-optimized/01-copy-of-0c0a9886-1200.jpg",
-      "/gallery-optimized/02-copy-of-0c0a9888-1200.jpg",
-      "/gallery-optimized/03-copy-of-0c0a9894-1200.jpg",
-      "/gallery-optimized/04-copy-of-9a4a5651-1200.jpg",
-      "/gallery-optimized/06-img-5755-1200.jpg",
-      "/gallery-optimized/07-img-5795-1200.jpg",
-      "/gallery-optimized/08-img-6033-1200.jpg",
-      "/gallery-optimized/09-img-5722-1200.jpg",
-      "/gallery-optimized/10-img-5531-1200.jpg"
+      
     ]
   },
   "events": [
     {
-      "title": "Wedding Ceremony",
-      "date": "27 May 2026 (9:00 AM to 10:30 AM)",
+      "title": "Reception",
+      "date": "06 September 2026 (6.30 PM onwards)",
+      "icon": "mandala"
+    }, 
+    {
+      "title": "Wedding",
+      "date": "07 September 2026 (6.00 AM to 7.30 AM)",
       "icon": "mandala"
     }
   ],
   "wedding": {
-    "date": "2026-05-27",
-    "time": "09:00",
-    "displayText": "27 May 2026 (9:00 AM to 10:30 AM)",
-    "calendarTitle": "Surutheswar & Yuvarani Wedding",
-    "calendarLocation": "Vasavi Mahal, Kumbakonam",
+    "date": "2026-09-07",
+    "time": "06:30",
+    "displayText": "07 September 2026 (6.00 AM to 7.30 AM)",
+    "calendarTitle": "Naveen Kumar & Sindhu Wedding",
+    "calendarLocation": "Sam Mahal, Ambattur, Chennai",
     "showCalendarButtons": false  
   }
 }

@@ -3,7 +3,7 @@
     { "source": "/", "destination": "/themes/temple/index.html" },
     { "source": "/styles.css", "destination": "/themes/temple/styles.css" },
     { "source": "/patches.js", "destination": "/themes/temple/patches.js" },
-    { "source": "/favicon.svg", "destination": "/themes/temple/favicon.svg" },
-    { "source": "/:path*", "destination": "/:path*" }
+    { "source": "/favicon.svg", "destination": "/themes/temple/favicon.svg" }
   ]
 }
+  
