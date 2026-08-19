@@ -227,7 +227,7 @@
     let isPlaying = false;
 
     const playMusic = () => {
-      audio.volume = 0.009;
+      audio.volume = 0.09;
       audio.play().catch(() => { });
     };
 
