@@ -27,8 +27,8 @@
   "photos": {
     "enabled": false,
     "hero": {
-      "desktop": "/gallery-optimized/image.png",
-      "mobile": "/gallery-optimized/image.png"
+      "desktop": "/gallery-optimized/image1.png",
+      "mobile": "/gallery-optimized/image1.png"
     },
     "gallery": [
       
